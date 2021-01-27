@@ -7,6 +7,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
@@ -21,7 +22,17 @@
                 <Button Content="表示" Command="{Binding MessageBtnCmd}" Width="40" Margin="20 0"></Button>
             </StackPanel>
         </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Content="サンプル1表示" Command="{Binding ShowSampleViewBtnCmd}" Height="30" Width="80"></Button>
+        </Grid>
         
-        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
+        <ContentControl Grid.Row="2" prism:RegionManager.RegionName="ContentRegion" />
     </Grid>
 </Window>

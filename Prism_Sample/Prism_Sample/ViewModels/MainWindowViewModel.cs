@@ -5,16 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Regions;
 
 namespace Prism_Sample.ViewModels
 {
     public class MainWindowViewModel : BaseViewModel
     {
-        public DelegateCommand MessageBtnCmd { get; private set; }
+        private readonly IRegionManager _regionManager;
 
-        public MainWindowViewModel() : base()
+        public DelegateCommand MessageBtnCmd { get; private set; }
+        public DelegateCommand ShowSampleViewBtnCmd { get; private set; }
+
+        public MainWindowViewModel(IRegionManager regionManager) : base()
         {
+            _regionManager = regionManager;
+
             MessageBtnCmd = new DelegateCommand(ExecuteMessageBtnCmd);
+            ShowSampleViewBtnCmd = new DelegateCommand(ExecuteShowSampleViewBtnCmd);
+        }
+
+        private void ExecuteShowSampleViewBtnCmd()
+        {
+            _regionManager.RequestNavigate("ContentRegion", "SampleView");
         }
 
         private void ExecuteMessageBtnCmd()

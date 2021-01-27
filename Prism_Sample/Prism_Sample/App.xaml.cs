@@ -17,7 +17,7 @@ namespace Prism_Sample
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterForNavigation<Views.Contents.SampleView>();
         }
     }
 }
