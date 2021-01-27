@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="Prism_Sample.Views.Contents.SampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Label Content="これは、ContentControl のサンプルです"></Label>
+    </Grid>
+</UserControl>
