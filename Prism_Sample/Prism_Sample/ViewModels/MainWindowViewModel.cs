@@ -1,19 +1,25 @@
-﻿using Prism.Mvvm;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Prism.Commands;
+using Prism.Mvvm;
 
 namespace Prism_Sample.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    public class MainWindowViewModel : BaseViewModel
     {
-        private string _title = "Prism Application";
-        public string Title
+        public DelegateCommand MessageBtnCmd { get; private set; }
+
+        public MainWindowViewModel() : base()
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            MessageBtnCmd = new DelegateCommand(ExecuteMessageBtnCmd);
         }
 
-        public MainWindowViewModel()
+        private void ExecuteMessageBtnCmd()
         {
-
+            throw new NotImplementedException();
         }
     }
 }
