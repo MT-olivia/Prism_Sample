@@ -19,6 +19,7 @@ namespace Prism_Sample
         {
             containerRegistry.RegisterForNavigation<Views.Sample>();
             containerRegistry.RegisterForNavigation<Views.AddCalc>();
+            containerRegistry.RegisterDialog<Views.ShowDialogSample, ViewModels.ShowDialogSampleViewModel>();
         }
     }
 }

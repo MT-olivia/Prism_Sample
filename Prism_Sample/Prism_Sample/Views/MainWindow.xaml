@@ -21,6 +21,7 @@
                 <Label Content="メッセージダイアログ"></Label>
                 <Button Content="表示" Command="{Binding MessageBtnCmd}" Width="40" Margin="20 0"></Button>
             </StackPanel>
+            <Label Grid.Column="2" Content="{Binding ReturnText}"></Label>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -37,6 +38,7 @@
                 <TextBox Text="{Binding Second}" Height="20" Width="30"></TextBox>
                 <Button Content="計算" Command="{Binding CalulateBtnCmd}" Height="30" Width="40" Margin="30 0"></Button>
             </StackPanel>
+            <Button Grid.Column="2" Content="別ウィンドウを開く" Command="{Binding ShowDialogBtnCmd}" Height="30" Width="100"></Button>
         </Grid>
         
         <ContentControl Grid.Row="2" prism:RegionManager.RegionName="ContentRegion" />
