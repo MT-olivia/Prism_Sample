@@ -8,7 +8,7 @@ namespace Prism_Sample
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
-    public partial class App
+    public partial class App : Prism.Unity.PrismApplication
     {
         protected override Window CreateShell()
         {
@@ -17,7 +17,8 @@ namespace Prism_Sample
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<Views.Contents.SampleView>();
+            containerRegistry.RegisterForNavigation<Views.Sample>();
+            containerRegistry.RegisterForNavigation<Views.AddCalc>();
         }
     }
 }

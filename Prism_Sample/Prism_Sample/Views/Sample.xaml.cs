@@ -1,13 +1,13 @@
 ﻿using System.Windows.Controls;
 
-namespace Prism_Sample.Views.Contents
+namespace Prism_Sample.Views
 {
     /// <summary>
     /// Interaction logic for SampleView
     /// </summary>
-    public partial class SampleView : UserControl
+    public partial class Sample : UserControl
     {
-        public SampleView()
+        public Sample()
         {
             InitializeComponent();
         }

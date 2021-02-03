@@ -31,6 +31,12 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="サンプル1表示" Command="{Binding ShowSampleViewBtnCmd}" Height="30" Width="80"></Button>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBox Text="{Binding First}" Height="20" Width="30"></TextBox>
+                <Label Content="+"></Label>
+                <TextBox Text="{Binding Second}" Height="20" Width="30"></TextBox>
+                <Button Content="計算" Command="{Binding CalulateBtnCmd}" Height="30" Width="40" Margin="30 0"></Button>
+            </StackPanel>
         </Grid>
         
         <ContentControl Grid.Row="2" prism:RegionManager.RegionName="ContentRegion" />

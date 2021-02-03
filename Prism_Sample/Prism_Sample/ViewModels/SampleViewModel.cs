@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace Prism_Sample.ViewModels
 {
-    public class SampleViewViewModel : BindableBase
+    public class SampleViewModel : BindableBase
     {
-        public SampleViewViewModel()
+        public SampleViewModel()
         {
 
         }

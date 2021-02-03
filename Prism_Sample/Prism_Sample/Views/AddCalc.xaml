@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Prism_Sample.Views.AddCalc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="{Binding FirstArg}"></Label>
+            <Label Content="+"></Label>
+            <Label Content="{Binding SecondArg}"></Label>
+            <Label Content="は"></Label>
+            <Label Content="{Binding Result}"></Label>
+            <Label Content="です"></Label>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -56,7 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\Contents\SampleView.xaml">
+    <Page Include="Views\AddCalc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Sample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -68,11 +72,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModels\AddCalcViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
-    <Compile Include="ViewModels\SampleViewViewModel.cs" />
-    <Compile Include="Views\Contents\SampleView.xaml.cs">
-      <DependentUpon>SampleView.xaml</DependentUpon>
+    <Compile Include="ViewModels\SampleViewModel.cs" />
+    <Compile Include="Views\AddCalc.xaml.cs">
+      <DependentUpon>AddCalc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sample.xaml.cs">
+      <DependentUpon>Sample.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
