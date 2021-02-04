@@ -9,10 +9,10 @@ namespace Prism_Sample.ViewModels
 {
     public class ShowDialogSampleViewModel : BindableBase, IDialogAware
     {
+        private IDialogService _dialogService;
+        private Services.IMessageService _messageService;
+
         private string _labelText;
-
-        public event Action<IDialogResult> RequestClose;
-
         public string LabelText
         {
             get { return _labelText; }
@@ -28,10 +28,19 @@ namespace Prism_Sample.ViewModels
 
         public string Title => "Dialog";
 
+        public event Action<IDialogResult> RequestClose;
+
         public DelegateCommand ReturnBtnCmd { get; private set; }
 
-        public ShowDialogSampleViewModel()
+        public ShowDialogSampleViewModel(IDialogService dialogService) :this(dialogService, new Services.MessageService())
         {
+
+        }
+
+        public ShowDialogSampleViewModel(IDialogService dialogService, Services.IMessageService messageService)
+        {
+            _dialogService = dialogService;
+            _messageService = messageService;
             LabelText = "別ウィンドウを開くサンプルです";
 
             ReturnBtnCmd = new DelegateCommand(ExecuteReturnBtnCmd);
@@ -39,11 +48,16 @@ namespace Prism_Sample.ViewModels
 
         private void ExecuteReturnBtnCmd()
         {
-            var dp = new DialogParameters();
-            dp.Add(nameof(Text), Text);
+            if (_messageService.Question("値を戻しますか？") == System.Windows.MessageBoxResult.OK)
+            {
+                _messageService.ShowDialog("OK");
 
-            // DialogResult の第1引数は、呼び出し元の画面に「何のボタンが押されたか？」を教えるためのもの
-            RequestClose?.Invoke(new DialogResult(ButtonResult.OK, dp));
+                var dp = new DialogParameters();
+                dp.Add(nameof(Text), Text);
+
+                // DialogResult の第1引数は、呼び出し元の画面に「何のボタンが押されたか？」を教えるためのもの
+                RequestClose?.Invoke(new DialogResult(ButtonResult.OK, dp));
+            }
         }
 
         public bool CanCloseDialog()
