@@ -56,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\IMessageService.cs" />
+    <Compile Include="Services\MessageService.cs" />
     <Compile Include="ViewModels\ShowDialogSampleViewModel.cs" />
     <Compile Include="Views\ShowDialogSample.xaml.cs">
       <DependentUpon>ShowDialogSample.xaml</DependentUpon>
